@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "lashablogsanity": "cd lashablogsanity && sanity start",
+    "dev": "concurrently --kill-others \"next dev\" \"npm run lashablogsanity\"",
     "build": "next build",
     "start": "next start"
   },
@@ -14,5 +15,8 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "17.0.1",
     "sass": "^1.32.7"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
   }
 }
