@@ -5,6 +5,7 @@ import CardListItem from 'components/CardListItem';
 import CardItem from 'components/CardItem';
 
 import { getAllBlogs } from 'lib/api';
+import Link from 'next/link';
 
 export default function Home ( { blogs } ) {
   return (
@@ -27,6 +28,11 @@ export default function Home ( { blogs } ) {
                  subtitle={blog.subtitle}
                  date={blog.date}
                  image={blog.coverImage}
+                 slug={blog.slug}
+                 link={{
+                   href:`/blogs/[slug]`,
+                   as:`/blogs/${blog.slug}`
+                 }}
               />
             </Col >
          )
