@@ -1,13 +1,20 @@
 import PageLayout from '../../components/PageLayout';
-import {useRouter} from 'next/router';
+import {getBlogBySlug} from '../../lib/api';
 
-const BlogDetail=()=>{
-  const { query }=useRouter();
-  return(
-     <PageLayout>
-       <h1>hello detail page- {query?.slug}</h1>
-     </PageLayout>
-  )
+const BlogDetail = ({blog}) => {
+
+  return (
+     <PageLayout >
+       <h1 >hello detail page- {blog?.slug}</h1 >
+     </PageLayout >
+  );
+};
+
+export async function getServerSideProps ({params}) {
+  const blog = await getBlogBySlug(params.slug);
+  return {
+    props: {blog}
+  };
 }
 
-export default BlogDetail
+export default BlogDetail;
