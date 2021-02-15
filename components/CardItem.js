@@ -1,6 +1,6 @@
 import { Card } from 'react-bootstrap';
 
-const CardItem =({title,subtitle,date,image})=>{
+const CardItem =({title,subtitle,date,image,author})=>{
   return(
      <Card className={`fj-card`}>
        <div className="card-body-wrapper">
@@ -15,7 +15,7 @@ const CardItem =({title,subtitle,date,image})=>{
               alt="avatar"
            />
            <div >
-             <Card.Title className="font-weight-bold mb-1">Placeholder Author</Card.Title >
+             <Card.Title className="font-weight-bold mb-1">{author}</Card.Title >
              <Card.Text className="card-date">{date}</Card.Text >
            </div >
          </Card.Header >
