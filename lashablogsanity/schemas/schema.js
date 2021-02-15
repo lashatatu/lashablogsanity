@@ -37,7 +37,9 @@ export default createSchema({
           name: 'title',
           type: 'string',
           title: 'title',
-          validation:(Rule)=>{return Rule.required()}
+          validation: (Rule) => {
+            return Rule.required();
+          }
         },
         {
           name: 'subtitle',
@@ -47,30 +49,43 @@ export default createSchema({
         {
           name: 'coverImage',
           title: 'cover image',
-          type: 'image'
+          type: 'image',
+          fields: [
+            {
+              type: 'text',
+              name: 'alt',
+              title: 'Description'
+            }
+          ]
         },
         {
           name: 'content',
           title: 'Content',
           type: 'array',
-          of:[
+          of: [
             {
               type: 'block'
             },
             {
               type: 'image',
-              fields:[
+              fields: [
                 {
-                  type:'text',
+                  type: 'text',
                   name: 'alt',
-                  title:'Description',
-                  options:{
+                  title: 'Description',
+                  options: {
                     isHighlighted: true
                   }
                 }
               ],
-              options:{
-                hotspot:true
+              options: {
+                hotspot: true
+              }
+            },
+            {
+              type: 'code',
+              options: {
+                withFilename: true
               }
             }
           ]
@@ -79,20 +94,26 @@ export default createSchema({
           name: 'date',
           title: 'date',
           type: 'datetime',
-          validation:(Rule)=>{return Rule.required()}
+          validation: (Rule) => {
+            return Rule.required();
+          }
         },
         {
-          name:'author',
-          title:'Author',
+          name: 'author',
+          title: 'Author',
           type: 'reference',
-          to:[{type:'author'}],
-          validation:(Rule)=>{return Rule.required()}
+          to: [{type: 'author'}],
+          validation: (Rule) => {
+            return Rule.required();
+          }
         },
         {
           name: 'slug',
           type: 'slug',
           title: 'Slug',
-          validation:(Rule)=>{return Rule.required()}
+          validation: (Rule) => {
+            return Rule.required();
+          }
         }
       ]
     }
