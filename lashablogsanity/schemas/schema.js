@@ -50,6 +50,32 @@ export default createSchema({
           type: 'image'
         },
         {
+          name: 'content',
+          title: 'Content',
+          type: 'array',
+          of:[
+            {
+              type: 'block'
+            },
+            {
+              type: 'image',
+              fields:[
+                {
+                  type:'text',
+                  name: 'alt',
+                  title:'Description',
+                  options:{
+                    isHighlighted: true
+                  }
+                }
+              ],
+              options:{
+                hotspot:true
+              }
+            }
+          ]
+        },
+        {
           name: 'date',
           title: 'date',
           type: 'datetime',
