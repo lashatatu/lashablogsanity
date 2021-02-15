@@ -8,7 +8,7 @@ const BlogNavbar = () => {
         expand="lg"
      >
        <Navbar.Brand className="fj-navbar-brand">
-         <a href="#">Filip-Jerga</a >
+         <a href="#">Lasha Tatulashvili</a >
        </Navbar.Brand >
        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
        <Navbar.Collapse id="basic-navbar-nav">
