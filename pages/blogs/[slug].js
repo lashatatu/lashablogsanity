@@ -10,10 +10,27 @@ const BlogDetail = ({blog}) => {
   );
 };
 
-export async function getServerSideProps ({params}) {
+export async function getStaticProps ({params}) {
   const blog = await getBlogBySlug(params.slug);
   return {
     props: {blog}
+  };
+}
+
+export function getStaticPaths () {
+  return {
+    paths: [
+      {
+        params: {slug:'my-first-blog-post'}
+      },
+      {
+        params: {slug:'my-second-blog-post'}
+      },
+      {
+        params: {slug:'my-third-blog-post'}
+      }
+    ],
+    fallback:false
   };
 }
 
