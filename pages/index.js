@@ -22,12 +22,11 @@ export default function Home ( { blogs } ) {
                md="4"
             >
               <CardItem
+                 author={blog.author}
                  title={blog.title}
                  subtitle={blog.subtitle}
                  date={blog.date}
                  image={blog.coverImage}
-                 author={blog.author}
-
               />
             </Col >
          )
