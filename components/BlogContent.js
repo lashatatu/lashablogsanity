@@ -1,5 +1,6 @@
 import BlockContent from '@sanity/block-content-to-react';
 import HighlightCode from './HighlightCode';
+import {urlFor} from '../lib/api';
 
 const serializers = {
   types: {
@@ -10,13 +11,22 @@ const serializers = {
            <div className={'code-filename'}>{filename}</div >
          </HighlightCode >
       );
+    },
+    image: ({node: {asset, alt}}) => {
+      return (
+         <div className={'blog-image'}>
+           <img
+              src={urlFor(asset.url).height(300).fit('max').url()}
+           />
+           <div className={'image-alt'}>{alt}</div>
+         </div>
+      );
     }
   }
 };
 
 const BlogContent = ({content}) =>
    <BlockContent
-      imageOptions={{w: 320, h: 240, fit: 'max'}}
       serializers={serializers}
       blocks={content}
    />;
