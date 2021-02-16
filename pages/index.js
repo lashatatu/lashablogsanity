@@ -10,14 +10,15 @@ import {useState} from 'react';
 
 export default function Home ({blogs}) {
   const [filter, setFilter] = useState({
-    view: {list: 0}
+    view: {list: 1}
   });
   return (
      <PageLayout >
        <AuthorIntro />
        <FilteringMenu
-          onChange={() => {
-
+          filter={filter}
+          onChange={(option, value) => {
+            setFilter({...filter, [option]: value});
           }}
        />
        <hr />
@@ -27,8 +28,11 @@ export default function Home ({blogs}) {
          {/*  <CardListItem />*/}
          {/*</Col >*/}
          {blogs.map(blog =>
-            filter.view.list === 0 ?
-               <Col md={'9'}>
+            filter.view.list ?
+               <Col
+                  key={`${blog.slug}-list`}
+                  md={'9'}
+               >
                  <CardListItem />
                </Col >
                :
