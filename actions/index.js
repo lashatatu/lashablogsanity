@@ -6,6 +6,6 @@ export const useGetHello=()=>{
   return useSWR('/api/hello', fetcher);
 }
 
-export const useGetBlogs=()=>{
-  return useSWR(`/api/blogs`, fetcher)
+export const useGetBlogs=(initialData)=>{
+  return useSWR(`/api/blogs`, fetcher,{initialData})
 }
