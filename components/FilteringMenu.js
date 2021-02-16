@@ -1,14 +1,21 @@
-const FilteringMenu =({onChange,filter})=>{
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-  return(
+const LIST_VIEW_ICONS=['list','border-all']
+
+const FilteringMenu = ({onChange, filter}) => {
+
+  return (
      <div className={'filtering-menu mb-2'}>
-       <div onClick={()=>{
-         onChange('view',{list: +!filter.view.list});
-       }}>
-         List Filter - {filter.view.list}
-       </div>
-     </div>
-  )
-}
+       <FontAwesomeIcon
+          className={'clickable hoverable'}
+          size={'2x'}
+          icon={LIST_VIEW_ICONS[filter.view.list]}
+          onClick={() => {
+            onChange('view', {list: + !filter.view.list});
+          }}
+       />
+     </div >
+  );
+};
 
-export default FilteringMenu
+export default FilteringMenu;
