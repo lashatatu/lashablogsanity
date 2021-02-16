@@ -9,7 +9,7 @@ const CardListItem = ({title,subtitle,author,link,date}) => {
             className="d-flex flex-row"
          >
            <img
-              src={author?.avatar}
+              src={author?.avatar || 'https://via.placeholder.com/150'}
               className="rounded-circle mr-3"
               height="50px"
               width="50px"
