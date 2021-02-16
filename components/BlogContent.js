@@ -12,14 +12,27 @@ const serializers = {
          </HighlightCode >
       );
     },
-    image: ({node: {asset, alt}}) => {
+    image: ({node: {asset, alt, position = 'center'}}) => {
+      let style = {};
+      if ( position === 'left' ) {
+        style.float = position;
+        style.marginRight = '30px';
+      }
+
+      if ( position === 'right' ) {
+        style.float = position;
+        style.marginRight = '30px';
+      }
       return (
-         <div className={'blog-image'}>
+         <div
+            className={`blog-image blog-image-${position}`}
+
+         >
            <img
               src={urlFor(asset.url).height(300).fit('max').url()}
            />
-           <div className={'image-alt'}>{alt}</div>
-         </div>
+           <div className={'image-alt'}>{alt}</div >
+         </div >
       );
     }
   }
