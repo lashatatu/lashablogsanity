@@ -3,6 +3,7 @@ import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
+import {string} from 'prop-types';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -72,6 +73,26 @@ export default createSchema({
             {
               type: 'image',
               fields: [
+                {
+                  title: 'image',
+                  name:'position',
+                  type: "string",
+                  options: {
+                    list:[
+                      {
+                        title:'Center', value: 'center'
+                      },
+                      {
+                        title:'Left', value: 'left'
+                      },
+                      {
+                        title:'Right', value: 'right'
+                      }
+                    ],
+                    layout: 'radio',
+                    isHighlighted: true
+                  }
+                },
                 {
                   type: 'text',
                   name: 'alt',

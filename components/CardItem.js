@@ -1,8 +1,8 @@
-import { Card } from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import Link from 'next/link';
 import {urlFor} from '../lib/api';
 
-const CardItem = ( { title, subtitle, date, image, author, link } ) => {
+const CardItem = ({title, subtitle, date, image, author, link}) => {
   return (
      <Card className={`fj-card`}>
        <div className="card-body-wrapper">
@@ -23,7 +23,11 @@ const CardItem = ( { title, subtitle, date, image, author, link } ) => {
          </Card.Header >
          <div className="view overlay">
            <Card.Img
-              src={urlFor(image).height(300).url()}
+              src={urlFor(image)
+                 .height(300)
+                 .crop('center')
+                 .fit('clip')
+                 .url()}
               alt="Card image cap"
            />
          </div >
