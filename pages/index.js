@@ -3,10 +3,12 @@ import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
 import CardListItem from 'components/CardListItem';
 import CardItem from 'components/CardItem';
-import {getAllBlogs} from 'lib/api';
 import FilteringMenu from '../components/FilteringMenu';
 import {useState} from 'react';
 import useSWR from 'swr';
+
+import {getAllBlogs} from 'lib/api';
+import {useGetBlogs, useGetHello} from '../actions';
 
 const fetcher = (url) => fetch(url).then(res => res.json());
 
@@ -15,7 +17,11 @@ export default function Home ({blogs}) {
     view: {list: 1}
   });
 
-  const {data, error} = useSWR('/api/hello', fetcher);
+  const {data, error} = useGetBlogs()
+  if(data){
+    // alert(JSON.stringify(data))
+  }
+
   return (
      <PageLayout >
        <AuthorIntro />
