@@ -33,7 +33,17 @@ export default function Home ({blogs}) {
                   key={`${blog.slug}-list`}
                   md={'9'}
                >
-                 <CardListItem />
+                 <CardListItem
+                    author={blog.author}
+                    title={blog.title}
+                    subtitle={blog.subtitle}
+                    date={blog.date}
+                    slug={blog.slug}
+                    link={{
+                      href: `/blogs/[slug]`,
+                      as: `/blogs/${blog.slug}`
+                    }}
+                 />
                </Col >
                :
                <Col
