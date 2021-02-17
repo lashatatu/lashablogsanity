@@ -10,7 +10,8 @@ import {getAllBlogs} from 'lib/api';
 
 export default function Home ({blogs}) {
   const [filter, setFilter] = useState({
-    view: {list: 0}
+    view: {list: 0},
+    date: {asc:0}
   });
 
   const {
