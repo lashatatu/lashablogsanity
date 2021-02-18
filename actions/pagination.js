@@ -1,4 +1,3 @@
-
 import { useSWRInfinite } from 'swr';
 import { getBlogs } from 'actions';
 
