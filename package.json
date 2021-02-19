@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lashablogsanity": "cd lashablogsanity && sanity start",
-    "dev": "concurrently --kill-others \"next dev\" \"npm run lashablogsanity\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
