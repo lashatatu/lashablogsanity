@@ -12,7 +12,7 @@ export default async function enablePreview(req, res) {
 		return res.status(401).json({message: 'Invalid Slug1111!'})
 	}
 
-	res.setPreviewData({message: 'Hello World'});
+	res.setPreviewData({});
 	res.writeHead(307, { Location: `/blogs/${blog.slug}`})
 	res.end();
 }

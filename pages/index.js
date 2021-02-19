@@ -10,6 +10,7 @@ import {getPaginatedBlogs} from 'lib/api';
 import CardItem from 'components/CardItem';
 import CardListItem from 'components/CardListItem';
 import moment from 'moment';
+import PreviewAlert from '../components/PreviewAlert';
 
 export const BlogList = ({data = [], filter}) => {
 	return data.map(page => page.map(blog =>
@@ -50,7 +51,7 @@ export const BlogList = ({data = [], filter}) => {
 	));
 };
 
-export default function Home ({blogs}) {
+export default function Home ({blogs, preview}) {
 	const [filter, setFilter] = useState({
 		view: {list: 0},
 		date: {asc: 0}
@@ -62,6 +63,7 @@ export default function Home ({blogs}) {
 
 	return (
 		 <PageLayout >
+			 {preview && <PreviewAlert/>}
 			 <AuthorIntro />
 			 <FilteringMenu
 					filter={filter}
@@ -90,11 +92,11 @@ export default function Home ({blogs}) {
 	);
 }
 
-export async function getStaticProps () {
+export async function getStaticProps ({preview=false}) {
 	const blogs = await getPaginatedBlogs({offset: 0, date: 'desc'});
 	return {
 		props: {
-			blogs
+			blogs, preview
 		}
 	};
 }
