@@ -1,4 +1,3 @@
-
 html, body {
   height: 100%;
   font-family: Nunito, sans-serif;
@@ -8,7 +7,7 @@ html, body {
   background-color: #f4f7f9;
 }
 
-.clickable {
+.clickable:hover {
   cursor: pointer;
 }
 
@@ -37,7 +36,7 @@ html, body {
     padding: 20px;
     padding-bottom: 40px;
 
-    &.no-image{
+    &.no-image {
       min-height: auto;
     }
   }
@@ -62,7 +61,6 @@ html, body {
   .card-header {
     background-color: transparent;
     padding: 0px 0px 15px;
-
     img {
       --size: 45px;
       background-color: #fff;
@@ -85,8 +83,7 @@ html, body {
     font-weight: bold;
     font-size: 14px;
     letter-spacing: .15rem;
-    padding-top: 1.5rem !important /* @TODO temp !!!*/
-  ;
+    padding-top: 1.5rem !important /* @TODO temp !!!*/;
     padding: .75rem 1.5rem;
     background-color: hsl(210, 5%, 41%);
     border-color: hsl(210, 5%, 36%);
@@ -125,7 +122,6 @@ html, body {
 
 .card.fj-card.placeholder {
   color: transparent;
-
   .image-placeholder {
     height: 200px;
     width: 100%;
@@ -144,7 +140,7 @@ html, body {
 // HEADER STARTS
 .fj-navbar.fj-nav-base {
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 0px;
 
   .fj-navbar {
     &-brand {
@@ -155,7 +151,7 @@ html, body {
       font-weight: bold;
 
       a {
-        color: black;
+        // color: black;
         font-weight: 900;
       }
     }
@@ -212,7 +208,6 @@ html, body {
 .bg-transparent.menu-close {
   transition: 1s;
 }
-
 // HEADER ENDS
 
 .card-header {
@@ -243,7 +238,7 @@ html, body {
 
   &-left {
     float: left;
-    margin-left: 30px;
+    margin-right: 30px;
   }
 
   &-right {
@@ -264,7 +259,6 @@ html, body {
     .lead {
       font-size: 17px;
     }
-
     &-title {
       font-size: 52px;
     }
@@ -282,7 +276,6 @@ html, body {
   .card.fj-card {
     background-color: #232129;
     transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
-
     .card-body-wrapper {
       background-color: #232129;
       transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
@@ -299,7 +292,7 @@ html, body {
 
     .fj-navbar {
       &-brand {
-        color: #ffffff;
+        // color: #ffffff;
       }
 
       &-link {
@@ -318,7 +311,6 @@ html, body {
 
   .react-toggle-track {
     background-color: black;
-
     &:hover {
       background-color: black;
     }
@@ -343,5 +335,35 @@ html, body {
 
   a {
     color: #63696e;
+  }
+}
+
+.dark {
+  .card.fj-card {
+    background-color: #232129;
+    transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
+    .card-body-wrapper {
+      background-color: #232129;
+      transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
+    }
+
+    .card-button {
+      background-color: #9b5f5f;
+    }
+  }
+
+  .fj-navbar.fj-nav-base {
+    width: 100%;
+    padding: 20px 0px;
+
+    .fj-navbar {
+      &-brand {
+        color: #ffffff;
+      }
+
+      &-link {
+        color: #ffffff;
+      }
+    }
   }
 }
