@@ -15,6 +15,7 @@
 
 # production
 /build
+/lashablogsanity
 
 # misc
 .DS_Store
