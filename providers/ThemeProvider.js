@@ -1,5 +1,5 @@
 import { ThemeContext, themes } from 'context/ThemeContext';
-import {useState, useContext, useMemo} from 'react';
+import { useState, useContext, useMemo } from 'react';
 
 const ThemeProvider = ({children}) => {
 	const [theme, setTheme] = useState(themes.light);
@@ -8,22 +8,22 @@ const ThemeProvider = ({children}) => {
 		setTheme(theme === themes.dark
 			 ? themes.light
 			 : themes.dark
-		);
-	};
+		)
+	}
 
 	const themeAPI = useMemo(() => {
 		return {
 			theme,
 			toggleTheme
-		};
-	}, [theme, toggleTheme]);
+		}
+	}, [theme, toggleTheme])
 
 	return (
 		 <ThemeContext.Provider value={themeAPI}>
 			 {children}
-		 </ThemeContext.Provider >
-	);
-};
+		 </ThemeContext.Provider>
+	)
+}
 
 export const useTheme = () => useContext(ThemeContext);
 

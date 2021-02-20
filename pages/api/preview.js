@@ -9,7 +9,7 @@ export default async function enablePreview(req, res) {
 	const blog = await getBlogBySlug(req.query.slug, true);
 
 	if (!blog) {
-		return res.status(401).json({message: 'Invalid Slug1111!'})
+		return res.status(401).json({message: 'Invalid Slug!'})
 	}
 
 	res.setPreviewData({});

@@ -1,5 +1,5 @@
-export default function exitPreview(_,res){
+export default function exitPreview(_, res) {
 	res.clearPreviewData();
-	res.writeHead(307,{location:'/'})
+	res.writeHead(307, { Location: '/' });
 	res.end();
 }
