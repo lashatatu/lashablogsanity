@@ -97,6 +97,7 @@ export async function getStaticProps ({preview=false}) {
 	return {
 		props: {
 			blogs, preview
-		}
+		},
+		revalidate:1
 	};
 }
